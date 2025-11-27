@@ -1,0 +1,26 @@
+@host = http://localhost:5007
+
+### Create a new Poll
+POST {{host}}/api/polls
+Content-Type: application/json
+
+{
+  "title": "Qual é a melhor linguagem de programação?",
+  "options": [
+    "C#",
+    "Java",
+    "Python",
+    "Rust"
+  ]
+}
+
+### Get Poll (Replace ID with actual ID from response)
+GET {{host}}/api/polls/1
+
+### Vote for an Option (Replace ID and OptionId)
+POST {{host}}/api/polls/1/vote
+Content-Type: application/json
+
+{
+  "optionId": 1
+}
